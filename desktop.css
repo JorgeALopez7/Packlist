@@ -116,3 +116,21 @@
   .pl-itemgrid  { grid-template-columns: repeat(4, 1fr) !important; }
   .pl-savedgrid { grid-template-columns: repeat(4, 1fr) !important; }
 }
+
+/* ============================================================
+   Installed app (home screen) only
+   ------------------------------------------------------------
+   display-mode: standalone matches ONLY when launched from the
+   home screen. In a mobile browser none of this applies.
+
+   No colour is set anywhere in this block. The sync strip keeps
+   its own safe-area inset exactly as built; the only thing added
+   is a top inset for full-screen overlays, whose close and back
+   controls were sliding under the status bar.
+   ============================================================ */
+@media (display-mode: standalone) {
+  .pl-sheetwrap {
+    padding-top: env(safe-area-inset-top);
+    box-sizing: border-box;
+  }
+}
