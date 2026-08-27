@@ -129,6 +129,16 @@
    controls were sliding under the status bar.
    ============================================================ */
 @media (display-mode: standalone) {
+  /* Full-screen item page. Its header (back, sync, star) was
+     drawing at pixel zero, under the clock. .slide is used on
+     exactly one element in the app, so this targets only it. */
+  .slide {
+    padding-top: env(safe-area-inset-top);
+    box-sizing: border-box;
+  }
+
+  /* Sheets, for the case where one grows tall enough to reach
+     the top of the screen. */
   .pl-sheetwrap {
     padding-top: env(safe-area-inset-top);
     box-sizing: border-box;
