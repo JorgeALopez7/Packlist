@@ -143,4 +143,13 @@
     padding-top: env(safe-area-inset-top);
     box-sizing: border-box;
   }
+
+  /* The tab bar adds its own padding on top of the home-indicator
+     inset, which stacks into more dead space than it needs. This
+     trims the bar's own padding while still clearing the
+     indicator. Size, spacing and colour are untouched. */
+  .pl-tabs {
+    padding-top: 10px !important;
+    padding-bottom: max(6px, calc(env(safe-area-inset-bottom) - 14px)) !important;
+  }
 }
